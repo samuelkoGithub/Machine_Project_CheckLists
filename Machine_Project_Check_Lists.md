@@ -19,7 +19,7 @@ etc.)?
 5. How should performance be measured?
 6. Is the performance measure aligned with the business objective?
 7. What would be the minimum performance needed to reach the business objective?
-8. What are comparable problems? Can you reuse experience or tools?
+8. What are comparable problems? Can it be reused experience or tools?
 9. Is human expertise available?
 10. How would you solve the problem manually?
 11. List the assumptions you (or others) have made so far.
@@ -53,7 +53,7 @@ Note: try to get insights from a field expert for these steps.
 4. For supervised learning tasks, identify the target attribute(s).
 5. Visualize the data.
 6. Study the correlations between attributes.
-7. Study how you would solve the problem manually.
+7. Study how the problem would be solved manually.
 8. Identify the promising transformations you may want to apply.
 9. Identify extra data that would be useful (go back to “Get the Data” on page 498).
 10. Document what you have learned.
@@ -62,11 +62,11 @@ Prepare the Data
 Notes:
   • Work on copies of the data (keep the original dataset intact).
   • Write functions for all data transformations you apply, for five reasons:
-    — So you can easily prepare the data the next time you get a fresh dataset
-    — So you can apply these transformations in future projects
+    — So it can be easily prepared the data the next time to get a fresh dataset
+    — So it can be applied these transformations in future projects
     — To clean and prepare the test set
     — To clean and prepare new data instances once your solution is live
-    — To make it easy to treat your preparation choices as hyperparameters
+    — To make it easy to treat its preparation choices as hyperparameters
 
 1. Data cleaning:
   • Fix or remove outliers (optional).
@@ -82,7 +82,7 @@ Notes:
 4. Feature scaling: standardize or normalize features.
 
 Notes:
-  • If the data is huge, you may want to sample smaller training sets so you can train
+  • If the data is huge, you may want to sample smaller training sets so it can be trained
     many different models in a reasonable time (be aware that this penalizes complex
     models such as large neural nets or Random Forests).
   • Once again, try to automate these steps as much as possible.
@@ -97,28 +97,28 @@ Notes:
 7. Short-list the top three to five
 
 Notes:
-  • You will want to use as much data as possible for this step, especially as you move toward the end of fine-tuning.
-  • As always automate what you can.
+  • It expects to use as much data as possible for this step, especially as you move toward the end of fine-tuning.
+  • As always automate what it can.
 1. Fine-tune the hyperparameters using cross-validation.
-  • Treat your data transformation choices as hyperparameters, especially when you are not sure about them (e.g., should I replace missing values with zero or with the median value? Or just drop the rows?).
-  • Unless there are very few hyperparameter values to explore, prefer random search over grid search. If training is very long, you may prefer a Bayesian optimization approach (e.g., using Gaussian process priors, as described by Jasper Snoek, Hugo Larochelle, and Ryan Adams).1
+  • Treat the data transformation choices as hyperparameters, especially when it is not sure about its (e.g., should I replace missing values with zero or with the median value? Or just drop the rows?).
+  • Unless there are very few hyperparameter values to explore, prefer random search over grid search. If training is very long, it may prefer a Bayesian optimization approach (e.g., using Gaussian process priors, as described by Jasper Snoek, Hugo Larochelle, and Ryan Adams).1
 2. Try Ensemble methods. Combining your best models will often perform better than running them individually.
 3. Once you are confident about your final model, measure its performance on the test set to estimate the generalization error.
 
-Present Your Solution
+Present the Solution
 1. Document what you have done.
 2. Create a nice presentation.
-  • Make sure you highlight the big picture first.
-3. Explain why your solution achieves the business objective.
-4. Don’t forget to present interesting points you noticed along the way.
+  • Make sure to highlight the big picture first.
+3. Explain why this solution achieves the business objective.
+4. Don’t forget to present interesting points that be noticed along the way.
   • Describe what worked and what did not.
-  • List your assumptions and your system’s limitations.
+  • List the assumptions and your system’s limitations.
 5. Ensure your key findings are communicated through beautiful visualizations or easy-to-remember statements (e.g., “the median income is the number-one predictor of housing prices”).
 
 Launch!
-1. Get your solution ready for production (plug into production data inputs, write unit tests, etc.).
-2. Write monitoring code to check your system’s live performance at regular intervals and trigger alerts when it drops.
+1. Get the solution ready for production (plug into production data inputs, write unit tests, etc.).
+2. Write monitoring code to check the system’s live performance at regular intervals and trigger alerts when it drops.
   • Beware of slow degradation too: models tend to “rot” as data evolves.
   • Measuring performance may require a human pipeline (e.g., via a crowdsourcing service).
-  • Also monitor your inputs’ quality (e.g., a malfunctioning sensor sending random values, or another team’s output becoming stale). This is particularly important for online learning systems.
-3. Retrain your models on a regular basis on fresh data (automate as much as possible).
+  • Also monitor all inputs’ quality (e.g., a malfunctioning sensor sending random values, or another team’s output becoming stale). This is particularly important for online learning systems.
+3. Retrain those models on a regular basis on fresh data (automate as much as possible).
